@@ -19,7 +19,7 @@ public class Main {
         while (true) {
             System.out.println("---------------------------------------------------");
             Scanner in = new Scanner(System.in);
-            System.out.println("1.ADD NEW CONTACT\n2.CONTACT VIEW\n3.CONTACT DELETE\n4.CONTACT SEARCH");
+            System.out.println("1.ADD NEW CONTACT\n2.CONTACT VIEW\n3.CONTACT DELETE\n4.CONTACT SEARCH\n5 to view all the database\n6.TO EXIT :)");
             System.out.println("Enter your choice");
             int choice = in.nextInt();
             switch (choice) {
@@ -51,7 +51,8 @@ public class Main {
                     contactAdd.addContact(fname, lname, MobNo, Mob2, EmailID);
                     break;
                 case 2:
-                    contactView.printAllContact();
+                    contactView.printAllContactactSort();
+
 //                    System.out.println(  Database.getConBook());
                     break;
                 case 3:
@@ -65,6 +66,12 @@ public class Main {
                     in.nextLine();
                     String name = in.nextLine();
                     contactSearch.searchContact(name);
+                    break;
+                case 5:
+                    System.out.println("alll the counts with details in database");
+                    contactView.printAllContact();
+                    break;
+                case 6:
                     break;
                 default:
                     System.out.println("invalid input " + "PLEASE TRY AGAIN!!!!!");
