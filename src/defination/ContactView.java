@@ -48,6 +48,7 @@ public class ContactView<E> implements ContactViewADT {
 
     @Override
     public E printAllContactactSort() {
+        System.out.println("Here are all your contact");
         ArrayList contactNames = new ArrayList();
         ArrayList contacts = new ArrayList(Database.getConBook());
         for (int i = 0; i < contacts.size(); i++) {
