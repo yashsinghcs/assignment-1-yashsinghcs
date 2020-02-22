@@ -14,6 +14,7 @@ public class ContactSearch<E> implements ContactSearchADT {
             if ((contact.get(0) + " " + contact.get(1)).equals(Name)) {
 
                 printSearchedContact((ArrayList) contacts.get(i));
+                break;
             }
         }
         System.out.println("----------------------------------------------------------\ncontact NOT FOUND!!!!\n----------------------------------------------");
