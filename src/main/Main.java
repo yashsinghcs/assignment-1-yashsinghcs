@@ -33,27 +33,21 @@ public class Main {
                         System.out.println("Enter the Mobile NO:");
                         String MobNo = in.next();
                         mobno.add(MobNo);
-
-                        for (int j = 0; j < 1000; j++) {
-
-
-                            if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
-                                System.out.println("mobile no error PLEASE try again");
-                                continue;
+                        if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
+                            System.out.println("mobile no error PLEASE try again");
+                            continue;
+                        }
+                        for (int i = 0; i < 1000; i++) {
+                            System.out.println("want to add another no?(y/n):");
+                            String responce = in.next();
+                            if (responce.equals("Y") || responce.equals("y")) {
+                                System.out.println("Enter the Mob2:");
+                                String Mob2 = in.next();
+                                mobno.add(Mob2);
+                            } else if (responce.equals("n") || responce.equals("N")) {
+                                break;
                             }
                         }
-                    for (int i = 0; i <1000 ; i++) {
-                        System.out.println("want to add another no?(y/n):");
-                        String responce = in.next();
-                        if (responce.equals("Y") || responce.equals("y")) {
-                            System.out.println("Enter the Mob2:");
-                            String Mob2 = in.next();
-                            mobno.add(Mob2);
-                        }
-                        else if (responce.equals("n")|| responce.equals("N")){
-                            break;
-                        }
-                    }
                     System.out.println("Enter the EMail ID:");
                     EmailID = in.next();
                     contactAdd.addContact(fname, lname, mobno, EmailID);
