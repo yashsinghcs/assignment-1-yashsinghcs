@@ -15,6 +15,9 @@ public class ContactView<E> implements ContactViewADT {
         ArrayList  contacts = new ArrayList(Database.getConBook());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList  contact = new ArrayList((Collection) contacts.get(i));
+            for (int j = 0; j <contacts.size() ; j++) {
+
+
             if (contact.size() == 5) {
                 System.out.println("--------------------------------------------");
                 System.out.println("Name=" + contact.get(0) + " " + contact.get(1));
@@ -29,7 +32,8 @@ public class ContactView<E> implements ContactViewADT {
                 System.out.println("Email id=" + contact.get(3) + "\n");
                 System.out.println("--------------------------------------------");
 
-            }
+            }}
+
 
         }
 
