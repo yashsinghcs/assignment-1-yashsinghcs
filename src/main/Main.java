@@ -21,10 +21,10 @@ public class Main {
         while (true) {
             System.out.println("---------------------------------------------------");
             Scanner in = new Scanner(System.in);
-            System.out.println("1.ADD NEW CONTACT\n2.CONTACT VIEW\n3.CONTACT DELETE\n4.CONTACT SEARCH\n5 to view all the database\n6.TO EXIT :)");
+            System.out.println("1.ADD NEW CONTACT\n2.CONTACT VIEW\n3.CONTACT DELETE\n4.CONTACT SEARCH\n5.TO EXIT :)");
             System.out.println("Enter your choice");
             int choice = in.nextInt();
-            if (choice == 6) {
+            if (choice == 5) {
                 break;
             }
             switch (choice) {
@@ -71,10 +71,6 @@ public class Main {
                     in.nextLine();
                     String name = in.nextLine();
                     contactSearch.searchContact(name);
-                    break;
-                case 5:
-                    System.out.println("alll the counts with details in database");
-                    contactView.printAllContact();
                     break;
                 default:
                     System.out.println("invalid input " + "PLEASE TRY AGAIN!!!!!");
