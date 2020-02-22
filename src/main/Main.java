@@ -5,6 +5,7 @@ import defination.ContactDelete;
 import defination.ContactSearch;
 import defination.ContactView;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +16,8 @@ public class Main {
         ContactSearch contactSearch = new ContactSearch();
         System.out.println("---------------------------------------------------");
         System.out.println("Welcome to YASH's Contact List");
-        String fname, lname, MobNo, Mob2, EmailID;
+        String fname, lname, EmailID;
+        ArrayList mobno = new ArrayList();
         while (true) {
             System.out.println("---------------------------------------------------");
             Scanner in = new Scanner(System.in);
@@ -28,27 +30,33 @@ public class Main {
                     fname = in.next();
                     System.out.println("Enter the lastName:");
                     lname = in.next();
-                    System.out.println("Enter the Mobile NO:");
-                    MobNo = in.next();
-                    if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
-                        System.out.println("mobile no error PLEASE try again");
-                        continue;
-                    }
-                    System.out.println("want to add another no?(y/n):");
-                    String responce = in.next();
-                    if (responce.equals("Y") || responce.equals("y")) {
-                        System.out.println("Enter the Mob2:");
-                        Mob2 = in.next();
-                        if (Mob2.length() != 10 || Mob2.matches("a-zA-Z")) {
-                            System.out.println("mobile no2 error PLEASE try again");
-                            continue;
+                        System.out.println("Enter the Mobile NO:");
+                        String MobNo = in.next();
+                        mobno.add(MobNo);
+
+                        for (int j = 0; j < 1000; j++) {
+
+
+                            if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
+                                System.out.println("mobile no error PLEASE try again");
+                                continue;
+                            }
                         }
-                    } else {
-                        Mob2 = null;
+                    for (int i = 0; i <1000 ; i++) {
+                        System.out.println("want to add another no?(y/n):");
+                        String responce = in.next();
+                        if (responce.equals("Y") || responce.equals("y")) {
+                            System.out.println("Enter the Mob2:");
+                            String Mob2 = in.next();
+                            mobno.add(Mob2);
+                        }
+                        else if (responce.equals("n")|| responce.equals("N")){
+                            break;
+                        }
                     }
                     System.out.println("Enter the EMail ID:");
                     EmailID = in.next();
-                    contactAdd.addContact(fname, lname, MobNo, Mob2, EmailID);
+                    contactAdd.addContact(fname, lname, mobno, EmailID);
                     break;
                 case 2:
                     contactView.printAllContactactSort();
