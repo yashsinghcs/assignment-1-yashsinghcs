@@ -1,11 +1,11 @@
 package defination;
 
+import adt.ContactAddADT;
+
 import java.util.ArrayList;
 
-public class ContactAdd {
-    public ContactAdd() {
-    }
-
+public class ContactAdd<E> implements ContactAddADT<E> {
+    @Override
     public boolean addContact(String fname, String lname, String MobNo, String Mob2, String Email) {
         ArrayList contact;
         if (Mob2 != null) {
