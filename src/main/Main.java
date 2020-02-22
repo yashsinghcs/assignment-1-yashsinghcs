@@ -24,16 +24,19 @@ public class Main {
             System.out.println("1.ADD NEW CONTACT\n2.CONTACT VIEW\n3.CONTACT DELETE\n4.CONTACT SEARCH\n5 to view all the database\n6.TO EXIT :)");
             System.out.println("Enter your choice");
             int choice = in.nextInt();
+            if (choice == 6) {
+                break;
+            }
             switch (choice) {
                 case 1:
                     System.out.println("Enter the firstName:");
                     fname = in.next();
                     System.out.println("Enter the lastName:");
                     lname = in.next();
-                        System.out.println("Enter the Mobile NO:");
-                        String MobNo = in.next();
-                        mobno.add(MobNo);
-                        if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
+                    System.out.println("Enter the Mobile NO:");
+                    String MobNo = in.next();
+                    mobno.add(MobNo);
+                    if (MobNo.length() != 10 || MobNo.matches("a-zA-Z")) {
                             System.out.println("mobile no error PLEASE try again");
                             continue;
                         }
@@ -72,8 +75,6 @@ public class Main {
                 case 5:
                     System.out.println("alll the counts with details in database");
                     contactView.printAllContact();
-                    break;
-                case 6:
                     break;
                 default:
                     System.out.println("invalid input " + "PLEASE TRY AGAIN!!!!!");
