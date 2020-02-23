@@ -55,10 +55,8 @@ public class Main {
 //                    System.out.println(  Database.getConBook());
                     break;
                 case 3:
-                    System.out.println("enter the full name of the person");
-                    in.nextLine();
-                    String delName = in.nextLine();
-                    contactDelete.deleteContact(delName);
+
+                    contactDelete.deleteContact();
                     break;
                 case 4:
                     System.out.println("enter the full name of the person");
