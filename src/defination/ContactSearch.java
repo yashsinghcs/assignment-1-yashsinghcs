@@ -8,13 +8,18 @@ import java.util.Collection;
 public class ContactSearch<E> implements ContactSearchADT {
     @Override
     public void searchContact(String Name) {
+        int flag = 0;
         ArrayList contacts = new ArrayList(Database.getConBook());
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
             if ((contact.get(0) + " " + contact.get(1)).equals(Name)) {
-
+                flag = 1;
                 printSearchedContact((ArrayList) contacts.get(i));
+                break;
             }
+        }
+        if (flag == 0) {
+            System.out.println("Contact not found in search");
         }
     }
 
