@@ -20,7 +20,7 @@ public class ContactView<E> implements ContactViewADT {
             contactNames.add(contact.get(0) + " " + contact.get(1));
 
         }
-        Collections.sort(contactNames);
+        Collections.sort(contactNames, String.CASE_INSENSITIVE_ORDER);
         for (int i = 0; i < contactNames.size(); i++) {
             System.out.println(contactNames.get(i).toString());
         }
