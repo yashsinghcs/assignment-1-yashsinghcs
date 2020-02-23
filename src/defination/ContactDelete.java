@@ -24,7 +24,6 @@ public class ContactDelete<E> implements ContactDeleteADT {
             System.out.println(contactNames.get(i).toString());
         }
         System.out.println("enter the name to be deleted");
-        in.nextLine();
         String name = in.nextLine();
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
