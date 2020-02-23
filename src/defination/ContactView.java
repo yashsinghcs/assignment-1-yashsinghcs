@@ -12,11 +12,11 @@ public class ContactView<E> implements ContactViewADT {
     @Override
     public void printAllContact() {
 
-        ArrayList contacts = new ArrayList(Database.getConBook());
         System.out.println("here are all the names of your contact sorted");
-        ArrayList contactNames = new ArrayList(Database.getConBook());
-        for (int i = 0; i < contactNames.size(); i++) {
-            ArrayList contact = new ArrayList((Collection) contactNames.get(i));
+        ArrayList contactNames = new ArrayList();
+        ArrayList contacts = new ArrayList(Database.getConBook());
+        for (int i = 0; i < contacts.size(); i++) {
+            ArrayList contact = new ArrayList((Collection) contacts.get(i));
             contactNames.add(contact.get(0) + " " + contact.get(1));
 
         }
@@ -24,6 +24,7 @@ public class ContactView<E> implements ContactViewADT {
         for (int i = 0; i < contactNames.size(); i++) {
             System.out.println(contactNames.get(i).toString());
         }
+        System.out.println("Here are the list of contacts without sorted but all the data ");
         for (int i = 0; i < contacts.size(); i++) {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
             if (contact.size() == 5) {
