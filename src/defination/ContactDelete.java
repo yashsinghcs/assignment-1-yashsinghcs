@@ -13,9 +13,11 @@ public class ContactDelete<E> implements ContactDeleteADT {
             ArrayList contact = new ArrayList((Collection) contacts.get(i));
             if ((contact.get(0) + " " + contact.get(1)).equals(name)) {
                 Database.removecontact(i);
+                System.out.println("Contact deleted sucessfully");
                 return true;
             }
         }
+        System.out.println("Contact not found or some error has occured");
         return false;
     }
 
