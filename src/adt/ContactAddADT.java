@@ -1,7 +1,9 @@
 package adt;
 
+import java.util.ArrayList;
+
 public interface ContactAddADT<E> {
-    boolean addContact(String fname, String lname, String MobNo, String Mob2, String Email);
+    boolean addContact(String fname, String lname, ArrayList mobnos, String Email);
 
 
 }
