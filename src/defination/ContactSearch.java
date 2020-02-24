@@ -26,11 +26,15 @@ public class ContactSearch<E> implements ContactSearchADT {
 
     @Override
     public void printSearchedContact(ArrayList contact) {
-        if (contact.size() == 5) {
+        if (contact.size() >= 5) {
             System.out.println("--------------------------------------------");
             System.out.println("Name=" + contact.get(0) + " " + contact.get(1));
-            System.out.println("Mobile no(s)=" + contact.get(2) + "," + contact.get(3));
-            System.out.println("Email id=" + contact.get(4) + "\n");
+            System.out.println("Mobile No");
+            for (int i = 0; i < contact.size(); i++) {
+                System.out.println(contact.get(i));
+            }
+//            System.out.println("Mobile no(s)=" + contact.get(2) + "," + contact.get(3));
+            System.out.println("Email id=" + contact.get(contact.size() - 1) + "\n");
             System.out.println("--------------------------------------------");
 
         } else {
