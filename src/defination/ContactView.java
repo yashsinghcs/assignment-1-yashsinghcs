@@ -53,7 +53,7 @@ public class ContactView<E> implements ContactViewADT {
             for (int i = 0; i < contacts.size(); i++) {
                 ArrayList contact = new ArrayList((Collection) contacts.get(i));
                 if (name.equals(contact.get(0) + " " + contact.get(1))) {
-                    if (contact.size() == 5) {
+                    if (contact.size() >= 5) {
                         System.out.println("--------------------------------------------");
                         System.out.println("Name=" + contact.get(0) + " " + contact.get(1));
                         System.out.print("Mobile no(s)=");
